@@ -1,0 +1,205 @@
+/* ===================================
+   About Block
+   =================================== */
+
+.about {
+    padding: var(--spacing-20) 0;
+    background-color: var(--color-white);
+    position: relative;
+}
+
+.about__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-4);
+}
+
+.about__content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about__title {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-900);
+    margin-bottom: var(--spacing-8);
+    position: relative;
+}
+
+.about__title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    border-radius: 2px;
+}
+
+.about__text {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-gray-600);
+    margin-bottom: var(--spacing-12);
+    text-align: left;
+}
+
+.about__partners {
+    background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+    border-radius: var(--border-radius-xl);
+    padding: var(--spacing-8);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-gray-200);
+}
+
+.about__partners-title {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-900);
+    margin-bottom: var(--spacing-6);
+    text-align: center;
+}
+
+.about__partners-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-6);
+}
+
+.about__partner {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+    padding: var(--spacing-4);
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-fast);
+    border: 1px solid var(--color-gray-200);
+}
+
+.about__partner:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary-light);
+}
+
+.about__partner-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    background-color: var(--color-gray-50);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-2);
+    flex-shrink: 0;
+}
+
+.about__partner span {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-gray-700);
+    line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about {
+        padding: var(--spacing-16) 0;
+    }
+
+    .about__title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .about__text {
+        font-size: var(--font-size-base);
+        text-align: center;
+    }
+
+    .about__partners {
+        padding: var(--spacing-6);
+    }
+
+    .about__partners-title {
+        font-size: var(--font-size-xl);
+    }
+
+    .about__partners-list {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-4);
+    }
+
+    .about__partner {
+        padding: var(--spacing-3);
+    }
+
+    .about__partner-logo {
+        width: 36px;
+        height: 36px;
+    }
+
+    .about__partner span {
+        font-size: var(--font-size-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .about {
+        padding: var(--spacing-12) 0;
+    }
+
+    .about__container {
+        padding: 0 var(--spacing-3);
+    }
+
+    .about__title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .about__text {
+        font-size: var(--font-size-sm);
+    }
+
+    .about__partners {
+        padding: var(--spacing-4);
+    }
+
+    .about__partners-title {
+        font-size: var(--font-size-lg);
+    }
+
+    .about__partner {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-2);
+    }
+
+    .about__partner-logo {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* Animation */
+.about__content {
+    animation: fadeIn 1s ease-out;
+}
+
+.about__partners {
+    animation: slideInUp 1s ease-out 0.2s both;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 

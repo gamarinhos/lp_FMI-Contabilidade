@@ -1,0 +1,180 @@
+/* ===================================
+   CTA Block
+   =================================== */
+
+.cta {
+    padding: var(--spacing-20) 0;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.cta__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.cta__bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.2;
+    filter: grayscale(100%);
+}
+
+.cta__container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-4);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.cta__content {
+    animation: fadeIn 1s ease-out;
+}
+
+.cta__title {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-6);
+    line-height: 1.2;
+}
+
+.cta__text {
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-relaxed);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--spacing-8);
+}
+
+.cta__button {
+    background: linear-gradient(135deg, var(--color-accent) 0%, #f59e0b 100%);
+    color: var(--color-white);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    padding: var(--spacing-5) var(--spacing-10);
+    border-radius: var(--border-radius-2xl);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow: var(--shadow-xl);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta__button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.cta__button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-2xl);
+    background: linear-gradient(135deg, #f59e0b 0%, var(--color-accent) 100%);
+}
+
+.cta__button:hover::before {
+    left: 100%;
+}
+
+.cta__button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.3), var(--shadow-2xl);
+}
+
+.cta__button i {
+    font-size: var(--font-size-lg);
+    transition: transform var(--transition-fast);
+}
+
+.cta__button:hover i {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cta {
+        padding: var(--spacing-16) 0;
+    }
+
+    .cta__title {
+        font-size: var(--font-size-3xl);
+        margin-bottom: var(--spacing-4);
+    }
+
+    .cta__text {
+        font-size: var(--font-size-lg);
+        margin-bottom: var(--spacing-6);
+    }
+
+    .cta__button {
+        font-size: var(--font-size-lg);
+        padding: var(--spacing-4) var(--spacing-8);
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta {
+        padding: var(--spacing-12) 0;
+    }
+
+    .cta__container {
+        padding: 0 var(--spacing-3);
+    }
+
+    .cta__title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .cta__text {
+        font-size: var(--font-size-base);
+    }
+
+    .cta__button {
+        font-size: var(--font-size-base);
+        padding: var(--spacing-3) var(--spacing-6);
+    }
+}
+
+/* Animation */
+.cta__content {
+    animation: fadeIn 1s ease-out;
+}
+
+.cta__button {
+    animation: slideInUp 1s ease-out 0.3s both;
+}
+
+/* Pulse Animation for Button */
+.cta__button {
+    animation: slideInUp 1s ease-out 0.3s both;
+}
